@@ -1,0 +1,31 @@
+{% schema %}
+{
+  "name": "Import Saved Cart",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="import-saved-cart">
+  {{ content_for_header }}
+</div>
+
+<style>
+  {% include 'src/ImportSavedCart.css' %}
+</style>
+
+<script>
+  import ReactDOM from 'react-dom';
+  import ImportSavedCart from './src/ImportSavedCart';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const element = document.querySelector('.import-saved-cart');
+
+    ReactDOM.render(<ImportSavedCart />, element);
+  });
+</script>
